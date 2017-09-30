@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      MercadoSearch jpoh97
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+  <ion-label floating>Buscar producto</ion-label>
+  <ion-input type="text" [(ngModel)]="product"></ion-input>
+</ion-item>
+
+  <button ion-button block (click)="serchProduct()">Buscar</button>
+
+
+<ion-card *ngFor="let i of informationProduct.results">
+  <ion-card-content>
+    <ion-card-title>
+      Nombre del articulo: {{ i.title }}
+    </ion-card-title>
+
+      <img [src]="i.thumbnail" />
+
+    <ion-card-content>
+        Precio: {{ i.price }}
+    </ion-card-content>
+            <ion-card-content>
+      Cantidad de vendidos: {{ i.sold_quantity }}
+    </ion-card-content>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>
